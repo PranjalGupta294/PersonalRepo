@@ -2,12 +2,14 @@
 #include <string>
 
 int main() {
-    std::cout << "Welcome to the Dungeon!\n";
-
-    std::string name;
-    std::cout << "Enter your player name: ";
+    std::string line, name;
+    std::cout << "Enter your name: ";
     std::getline(std::cin, name);
 
-    std::cout << "Hello, " << name << "! Get ready to explore.\n";
-    return 0;
+    std::cout << "Enter your age: ";
+    std::getline(std::cin, line);
+    int age = 0;
+    try { age = std::stoi(line); } catch(...) { std::cerr << "Bad age, using 0\n"; }
+
+    std::cout << "Hello " << name << ", age " << age << "\n";
 }
